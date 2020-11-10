@@ -2,7 +2,7 @@ import json
 import boto3
 
 def addDataInSNS(data):
-    a = 10
+    a = 101
     sns = boto3.client('sns')
     sns.subscribe(TopicArn='arn:aws:sns:us-east-2:354117786283:sample',Protocol='email',Endpoint=data['email'])
     sns.publish(TopicArn = 'arn:aws:sns:us-east-2:354117786283:sample', Subject = 'ok', Message = "Hello")
